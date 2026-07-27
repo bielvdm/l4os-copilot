@@ -267,11 +267,11 @@
       <div class="slide-inner">
         <div class="cover-kicker" data-r="1">Proposta de arquitetura · 2026</div>
         <h1 class="hero-title" data-r="2"><span class="hero-wrap"><span>L4OS </span><span class="grad">Copilot</span></span></h1>
-        <p class="cover-sub" data-r="3">A camada de inteligência de todo o L4OS. Pergunte qualquer coisa e tenha <b>resposta na hora</b>, em qualquer módulo.</p>
+        <p class="cover-sub" data-r="3">A camada de inteligência de todo o L4OS. Pergunte em português e <b>cruze qualquer módulo com qualquer outro</b> — com resposta na hora.</p>
         <div class="cover-meta" data-r="4">
-          <span><i></i>Plugável em qualquer módulo</span>
-          <span><i></i>Console central</span>
-          <span><i></i>Resposta ao vivo</span>
+          <span><i></i>Plugável pelo Design System</span>
+          <span><i></i>Cérebro de dados único</span>
+          <span><i></i>Resposta ao vivo (SSE)</span>
         </div>
       </div>
     </section>
@@ -294,6 +294,23 @@
 <span class="c">// fala com /api/copilot</span><br>
 <span class="c">// outro serviço, outro banco</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · CRUZAMENTO ABERTO -->
+    <section class="slide" id="s-cross">
+      <div class="slide-inner">
+        <div class="eyebrow" data-r="1">Cruzamento aberto</div>
+        <h2 data-r="2">Qualquer módulo com qualquer outro.</h2>
+        <p class="lead" data-r="3">Não é ligação sob medida entre pares. Uma <strong>cópia read-only</strong> de cada módulo vive num <strong>cérebro de dados único (BigQuery)</strong>, e a IA junta ali — pelas chaves que <strong>todo módulo já tem</strong>.</p>
+        <div class="cols c3" style="margin-top:22px">
+          <div class="card" data-r="4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3>A pessoa</h3><p>O <span class="mono accent">user id</span> do auth é o mesmo em toda a plataforma.</p></div>
+          <div class="card" data-r="5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Empresa · produto</h3><p>Reconciliados por um de-para (<span class="mono">tenant_map</span>): produto ↔ tenantId ↔ org.</p></div>
+          <div class="card" data-r="6"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>A data</h3><p>Casa períodos e o que aconteceu junto (atual vs. histórico).</p></div>
+        </div>
+        <div class="chips" data-r="7" style="margin-top:16px">
+          <span>ligar módulo = espelhar banco + registrar views</span><span>nada hardcoded por par</span><span class="note">🔒 só cruza o que a permissão do usuário deixa ver</span>
         </div>
       </div>
     </section>
@@ -328,7 +345,7 @@
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 12h4l3 8 4-16 3 8h2"/></svg><b>Uso</b></div><p>Tokens e custo por módulo, empresa e usuário.</p></div>
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Perguntas comuns</b></div><p>O que mais perguntam em cada módulo.</p></div>
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg><b>Modelo por módulo</b></div><p>O cérebro certo para cada tipo de tarefa.</p></div>
-          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg><b>Adapters</b></div><p>Como o copiloto lê os dados de cada módulo.</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><b>Quem usa</b></div><p>Lista de pessoas por módulo — ou "liberar pra todos" num clique.</p></div>
         </div>
       </div>
     </section>
@@ -353,10 +370,10 @@
             <div class="code"><span class="c">// nada a fazer</span><br><span class="c">// no módulo</span><br><span class="k">✓</span> chat + RAG<br><span class="k">✓</span> insight do dia</div>
           </div>
           <div class="step">
-            <div class="num">PASSO 3 · opcional</div>
-            <h3>Liga os dados</h3>
-            <p>Cadastra um adapter no console e o chat passa a responder sobre os dados do módulo.</p>
-            <div class="code"><span class="c">// adapter</span><br>tool: <span class="s">"demandas.listar"</span><br>→ GET /api/demandas<br><span class="c">// read-only</span></div>
+            <div class="num">PASSO 3 · dados</div>
+            <h3>Espelha o banco</h3>
+            <p>O banco do módulo vira cópia read-only no cérebro (BigQuery). O chat passa a responder com números reais — e a cruzar outros módulos quando precisa.</p>
+            <div class="code"><span class="c">// pipe de dados</span><br>módulo → <span class="k">BigQuery</span><br>views curadas<br><span class="c">// read-only · frescor misto</span></div>
           </div>
         </div>
       </div>
@@ -377,7 +394,7 @@
             <div class="chat" id="chat">
               <div class="chat-head">
                 <span class="av"></span>
-                <div><b>Copiloto · Reporta</b><div class="ctx">vendas + tráfego · via L4OS Copilot</div></div>
+                <div><b>Copiloto · Reporta</b><div class="ctx">cruza cria + reporta · via L4OS Copilot</div></div>
                 <span class="live"><i></i>ao vivo</span>
               </div>
               <div class="chat-body" id="chat-body"></div>
@@ -408,19 +425,19 @@
               <div class="lbody"><b>L4OS Copilot (serviço próprio)</b><span>Backend, banco e chaves próprios. Escolhe o modelo por módulo.</span></div>
             </div>
             <div class="layer">
-              <span class="lbadge">CONSULTA</span>
-              <div class="lbody"><b>Camada de consulta só-leitura</b><span>O Copilot pergunta numa cópia read-only dos dados, com views curadas e escopo por empresa. A produção do módulo nunca é tocada.</span></div>
+              <span class="lbadge">CÉREBRO</span>
+              <div class="lbody"><b>BigQuery — cópia read-only de todos</b><span>É onde a IA cruza os módulos, por text-to-SQL em views curadas, com escopo por empresa. A produção nunca é tocada.</span></div>
             </div>
             <div class="layer">
-              <span class="lbadge">MÓDULO</span>
-              <div class="lbody"><b>Cada módulo com seu banco</b><span>A fonte da verdade fica aqui. Só a cópia de leitura é exposta, nunca a base de produção.</span></div>
+              <span class="lbadge">MÓDULOS</span>
+              <div class="lbody"><b>Cada módulo com seu Postgres</b><span>A fonte da verdade fica aqui, intocada. Só a cópia de leitura vai pro cérebro.</span></div>
             </div>
           </div>
           <div class="aside" data-r="4">
             <h4>Isolado por design</h4>
-            <div class="box"><b>Banco próprio (pg-copilot)</b><p>Guarda só as conversas, o uso e a config. Nunca os dados dos módulos. Escopado por empresa e usuário.</p></div>
-            <div class="box dash"><b>Federação sob gatilho</b><p>Um toggle deixa o copiloto consultar outros módulos, sempre por API e com a permissão do usuário.</p></div>
-            <div class="box"><b>Rápido, mesmo ao vivo</b><p>A consulta ao módulo é interna, na casa dos milissegundos, e cacheada. O tempo é do modelo, não da API.</p></div>
+            <div class="box"><b>Banco próprio (pg-copilot)</b><p>Guarda só conversas, memória, skills e config. Nunca os dados dos módulos. Escopado por empresa e usuário.</p></div>
+            <div class="box dash"><b>Federação aberta</b><p>Qualquer módulo cruza com qualquer outro no cérebro, controlado por config + authz — nunca cross-DB.</p></div>
+            <div class="box"><b>text-to-SQL blindado</b><p>Só <span class="mono">SELECT</span>, allow-list de views, escopo injetado no servidor e role só-leitura no IAM.</p></div>
           </div>
         </div>
       </div>
@@ -434,7 +451,7 @@
         <p class="lead" data-r="3">O Copilot nunca abre conexão na base de produção. O próprio GCP mantém uma cópia só-leitura, e a IA consulta por text-to-SQL em views curadas.</p>
         <div class="strip" data-r="4" style="margin-top:26px">
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><b>1 · Produção</b></div><p>Cloud SQL de cada módulo. A fonte da verdade, intocada.</p></div>
-          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h11l-3-3M20 17H9l3 3"/></svg><b>2 · Datastream</b></div><p>CDC nativo do GCP replica as mudanças quase em tempo real.</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h11l-3-3M20 17H9l3 3"/></svg><b>2 · Sincronização</b></div><p>Frescor misto: Datastream (CDC) onde precisa tempo-real; batch de hora/dia no resto.</p></div>
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 6h16v12H4zM4 10h16M9 10v8"/></svg><b>3 · Cópia read-only</b></div><p>BigQuery (ou réplica) com views curadas e escopo por empresa.</p></div>
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 9h8M8 13h5M21 12a9 9 0 1 1-3.8-7.3"/></svg><b>4 · Copilot</b></div><p>Pergunta por text-to-SQL, sempre com role só-leitura.</p></div>
         </div>
@@ -442,7 +459,76 @@
           <span>role só-leitura</span><span>allow-list de views</span><span>limite de linhas e tempo</span><span>validação da query</span><span>escopo por empresa</span>
           <span class="note">a IA não escreve, não altera e não sai do escopo</span>
         </div>
-        <p class="lead" data-r="6" style="margin-top:20px;font-size:14.5px">Para começar sem pipeline novo, dá para usar uma <strong>réplica read-only</strong> do Cloud SQL com as mesmas views. O BigQuery entra quando a análise cruzar módulos ou crescer em volume.</p>
+        <p class="lead" data-r="6" style="margin-top:20px;font-size:14.5px">A IA cruza pelas chaves que já existem — <strong>user id, empresa/produto (via tenant_map) e data</strong>. Uma réplica read-only serve de ponte pra um piloto; o <strong>BigQuery é o padrão</strong> pro cruzamento aberto entre módulos.</p>
+      </div>
+    </section>
+
+    <!-- MOTOR DE IA -->
+    <section class="slide" id="s-gateway">
+      <div class="slide-inner">
+        <div class="eyebrow" data-r="1">Motor de IA · greenfield</div>
+        <h2 data-r="2">Multi-provedor, o modelo certo por tarefa.</h2>
+        <p class="lead" data-r="3">Gateway próprio — não reusa as IAs dos módulos. Uma interface, vários provedores, trocáveis por config.</p>
+        <div class="split" style="margin-top:20px">
+          <div class="bullets">
+            <div class="bullet" data-r="4"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Provedores.</b> Anthropic + Gemini atrás de <span class="mono accent" style="font-size:13px">LlmProvider</span>; caminho <span class="mono">mcp-worker</span> plugável (experimento de custo).</p></div>
+            <div class="bullet" data-r="5"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Router por perfil.</b> <span class="mono">analytic</span> · <span class="mono">creative</span> · <span class="mono">fast</span> — o cérebro certo pra cada tarefa, com override por pergunta.</p></div>
+            <div class="bullet" data-r="6"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Economia real.</b> prompt caching + RAG/pushdown + batch. MCP é camada de <em>tools</em>, não alavanca de custo.</p></div>
+          </div>
+          <div class="snippet" data-r="4">
+<span class="c">// uma interface, vários provedores</span><br>
+<span class="k">interface</span> <span class="t">LlmProvider</span> {<br>
+&nbsp;&nbsp;streamCompletion(req, signal)<br>
+&nbsp;&nbsp;complete(req)  <span class="c">// jobs</span><br>
+&nbsp;&nbsp;embed(texts)   <span class="c">// RAG</span><br>
+}<br><br>
+<span class="c">// escolha por módulo</span><br>
+provider_path: <span class="s">"direct"</span> | <span class="s">"mcp"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGURANÇA -->
+    <section class="slide" id="s-sec">
+      <div class="slide-inner">
+        <div class="eyebrow" data-r="1">Segurança e controle</div>
+        <h2 data-r="2">Cada um vê só o que pode.</h2>
+        <p class="lead" data-r="3">O acesso passa por três camadas — todas no servidor. O front nunca decide.</p>
+        <div class="strip" data-r="4" style="margin-top:24px;grid-template-columns:repeat(3,1fr)">
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><b>1 · Tem o módulo</b></div><p><span class="mono">hasModule</span> — a pessoa já pode ver o módulo (claim l4).</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><b>2 · Liberação</b></div><p><span class="mono">access_mode</span>: lista de pessoas ou "liberar pra todos".</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><b>3 · Permissão fina</b></div><p>No dado: visualizador não vê faturamento; export com limite.</p></div>
+        </div>
+        <div class="chips" data-r="5" style="margin-top:18px">
+          <span>role só-leitura</span><span>PII fora das views</span><span>escopo por empresa no servidor</span><span>allow-list de views</span>
+          <span class="note">a IA herda o authz do L4OS — sem exceção</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMÓRIA + SKILLS -->
+    <section class="slide" id="s-learn">
+      <div class="slide-inner">
+        <div class="eyebrow" data-r="1">Memória + automação</div>
+        <h2 data-r="2">Fica mais afiada — e trabalha sozinha.</h2>
+        <div class="cols c2" style="margin-top:22px">
+          <div class="card" data-r="3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h3>Aprende com o uso</h3><p>Guarda conversas e feedback e destila correções, preferências e glossário em <span class="mono accent" style="font-size:12.5px">cop_memory</span> (pgvector) + RAG de regras. Não é re-treino — é memória que cresce.</p></div>
+          <div class="card" data-r="4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Análises agendadas (skills)</h3><p>Prompts recorrentes em <span class="mono accent" style="font-size:12.5px">cop_schedule</span> (cron configurável) rodam num Cloud Run Job e entregam no L4OS ou no WhatsApp — no horário que você escolher.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTO -->
+    <section class="slide" id="s-cost">
+      <div class="slide-inner">
+        <div class="eyebrow" data-r="1">Quanto custa</div>
+        <h2 data-r="2">Cabe no orçamento.</h2>
+        <p class="lead" data-r="3">Cerca de <strong>R$ 50 por pessoa ao mês</strong> num time enxuto — e com <strong>teto de gasto que você define</strong>, então nunca surpreende no fim do mês.</p>
+        <div class="chips" data-r="4" style="margin-top:20px">
+          <span>infra quase fixa · min:0 · batch</span><span>IA por uso, com teto (cop_budget)</span><span>maximumBytesBilled no BigQuery</span><span>frescor misto</span>
+          <span class="note">alavancas: routing · prompt caching · RAG/pushdown · batch</span>
+        </div>
       </div>
     </section>
 
@@ -452,13 +538,14 @@
         <div class="eyebrow" data-r="1">Como chegar lá</div>
         <h2 data-r="2">Do piloto ao rollout.</h2>
         <div class="road" style="margin-top:28px">
-          <div class="phase" data-r="3"><div class="pn">FASE 1</div><h4>Serviço + chat</h4><p>O L4OS Copilot no ar, com resposta em streaming.</p></div>
-          <div class="phase" data-r="4"><div class="pn">FASE 2</div><h4>Piloto no DS</h4><p>&lt;Copilot/&gt; num módulo sem IA (Demandas).</p></div>
-          <div class="phase" data-r="5"><div class="pn">FASE 3</div><h4>Console</h4><p>Liga/desliga, chaves, budget e modelo por módulo.</p></div>
-          <div class="phase" data-r="6"><div class="pn">FASE 4</div><h4>Dados</h4><p>Adapters read-only e federação entre módulos.</p></div>
-          <div class="phase" data-r="7"><div class="pn">FASE 5</div><h4>Rollout</h4><p>Uso, perguntas comuns e ligar módulo a módulo.</p></div>
+          <div class="phase" data-r="3"><div class="pn">F0</div><h4>Serviço + chat</h4><p>L4OS Copilot no ar, resposta em streaming (SSE).</p></div>
+          <div class="phase" data-r="4"><div class="pn">F1</div><h4>Piloto no DS</h4><p>&lt;Copilot/&gt; num módulo sem IA (Demandas).</p></div>
+          <div class="phase" data-r="5"><div class="pn">F2</div><h4>Cérebro de dados</h4><p>BigQuery + pipes (Reporta) + views + tenant_map.</p></div>
+          <div class="phase" data-r="6"><div class="pn">F3</div><h4>Cruzamento</h4><p>text-to-SQL blindado, multi-módulo.</p></div>
+          <div class="phase" data-r="6"><div class="pn">F4</div><h4>Console</h4><p>On/off, modelo, budget, quem usa, schedules.</p></div>
+          <div class="phase" data-r="7"><div class="pn">F5</div><h4>Memória + rollout</h4><p>RAG, skills, uso — e ligar módulo a módulo.</p></div>
         </div>
-        <p class="lead" data-r="7" style="margin-top:26px;font-size:15px">O piloto é de propósito num módulo sem IA. Se ele ganha um copiloto só ligando no console, está provado que pluga em qualquer um.</p>
+        <p class="lead" data-r="7" style="margin-top:24px;font-size:14.5px">O piloto é de propósito num módulo sem IA: se ele ganha um copiloto só ligando no console, está provado que pluga em qualquer um. <strong>F6 (opcional)</strong> = rastreio de precisão arte→venda, atrás de flag, quando esse fluxo for priorizado.</p>
       </div>
     </section>
 
@@ -580,13 +667,13 @@
   function playChat(){
     clearChat();chatPlayed=true;
     var t=function(fn,ms){chatTimers.push(setTimeout(fn,ms))};
-    var u=document.createElement('div');u.className='msg u';u.textContent='Me dá o principal insight do vale_cap hoje.';
+    var u=document.createElement('div');u.className='msg u';u.textContent='Qual arte mais vendeu essa semana — e quem fez?';
     body.appendChild(u);
-    t(function(){var c=document.createElement('div');c.className='toolchip';c.id='tc';c.innerHTML='<i></i>consultando vendas + tráfego…';body.appendChild(c);},560);
+    t(function(){var c=document.createElement('div');c.className='toolchip';c.id='tc';c.innerHTML='<i></i>cruzando cria + reporta…';body.appendChild(c);},560);
     t(function(){
       var tc=document.getElementById('tc'); if(tc)tc.remove();
       var a=document.createElement('div');a.className='msg a';body.appendChild(a);
-      var full='O faturamento do vale_cap está 14% acima da semana passada (R$ 82,4k vs R$ 72,3k). O ganho veio do tráfego pago no Meta: o CPA caiu 9% e o criativo de vídeo puxou 60% das conversões. Sugiro reforçar o orçamento nele amanhã.';
+      var full='A arte que mais vendeu foi a do João (RA-7F3K): 1.240 vendas, +38% vs. a semana passada. Ela saiu no disparo de terça e puxou 61% das conversões do período. Vale repetir peças no mesmo estilo.';
       var i=0;var caret=document.createElement('span');caret.className='caret';
       (function type(){
         if(reduce){a.textContent=full;return;}
