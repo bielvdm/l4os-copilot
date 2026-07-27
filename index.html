@@ -463,6 +463,25 @@
       </div>
     </section>
 
+    <!-- RASTREIO ARTE -> VENDA -->
+    <section class="slide" id="s-trace">
+      <div class="slide-inner">
+        <div class="eyebrow" data-r="1">Rastreabilidade de ponta a ponta</div>
+        <h2 data-r="2">Da arte à venda, com precisão.</h2>
+        <p class="lead" data-r="3">É o caso mais valioso — e o único onde <strong>não há chave comum</strong>: no funil clique→compra, nada do id da arte chega até a venda. A ligação é feita por um <strong>código de rastreio que viaja no link</strong>. Entra já no MVP.</p>
+        <div class="strip" data-r="4" style="margin-top:24px">
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg><b>1 · A arte</b></div><p>ganha um código único (<span class="mono">RA-7F3K</span>) na criação, no Cria.</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><b>2 · O link</b></div><p>o código viaja na URL rastreável (<span class="mono">utm_content</span> + <span class="mono">l4ref</span>).</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 3l7 18 2-8 8-2z"/></svg><b>3 · O clique</b></div><p>sobrevive a landing e o checkout, onde os outros ids se perdem.</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20.6 13.4 11 3.99 4 4v7l9.6 9.4a2 2 0 0 0 2.8 0l4.2-4.2a2 2 0 0 0 0-2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg><b>4 · A venda</b></div><p>grava o <span class="mono">l4ref</span> → o cérebro liga arte ↔ venda com certeza.</p></div>
+        </div>
+        <div class="chips" data-r="5" style="margin-top:18px">
+          <span>reusa o padrão de rastreio que o Cria já tem</span>
+          <span class="note">histórico antigo (sem o código): atribuição por aproximação — tempo, canal, ad_id — sempre declarada</span>
+        </div>
+      </div>
+    </section>
+
     <!-- MOTOR DE IA -->
     <section class="slide" id="s-gateway">
       <div class="slide-inner">
@@ -541,11 +560,11 @@ provider_path: <span class="s">"direct"</span> | <span class="s">"mcp"</span>
           <div class="phase" data-r="3"><div class="pn">F0</div><h4>Serviço + chat</h4><p>L4OS Copilot no ar, resposta em streaming (SSE).</p></div>
           <div class="phase" data-r="4"><div class="pn">F1</div><h4>Piloto no DS</h4><p>&lt;Copilot/&gt; num módulo sem IA (Demandas).</p></div>
           <div class="phase" data-r="5"><div class="pn">F2</div><h4>Cérebro de dados</h4><p>BigQuery + pipes (Reporta) + views + tenant_map.</p></div>
-          <div class="phase" data-r="6"><div class="pn">F3</div><h4>Cruzamento</h4><p>text-to-SQL blindado, multi-módulo.</p></div>
+          <div class="phase" data-r="6"><div class="pn">F3</div><h4>Cruzamento</h4><p>text-to-SQL blindado, multi-módulo + rastreio arte→venda.</p></div>
           <div class="phase" data-r="6"><div class="pn">F4</div><h4>Console</h4><p>On/off, modelo, budget, quem usa, schedules.</p></div>
           <div class="phase" data-r="7"><div class="pn">F5</div><h4>Memória + rollout</h4><p>RAG, skills, uso — e ligar módulo a módulo.</p></div>
         </div>
-        <p class="lead" data-r="7" style="margin-top:24px;font-size:14.5px">O piloto é de propósito num módulo sem IA: se ele ganha um copiloto só ligando no console, está provado que pluga em qualquer um. <strong>F6 (opcional)</strong> = rastreio de precisão arte→venda, atrás de flag, quando esse fluxo for priorizado.</p>
+        <p class="lead" data-r="7" style="margin-top:24px;font-size:14.5px">O piloto é de propósito num módulo sem IA: se ele ganha um copiloto só ligando no console, está provado que pluga em qualquer um. O <strong>rastreio de precisão arte→venda</strong> (código no link) entra já no MVP, junto com a camada de dados.</p>
       </div>
     </section>
 
