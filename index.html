@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>L4OS Copilot</title>
+<title>l4.ia</title>
 <style>
   :root{
     --bg:#F6F5FC; --surface:#FFFFFF; --surface-2:#F0EEFA; --surface-3:#E6E3F6;
@@ -251,7 +251,7 @@
 
 <div class="deck">
   <header class="topbar">
-    <div class="wordmark"><span class="glyph" aria-hidden="true"></span><span><b>L4OS</b> <span class="sub">Copilot</span></span></div>
+    <div class="wordmark"><span class="glyph" aria-hidden="true"></span><span><b>l4</b><span class="sub">.ia</span></span></div>
     <div class="topbar-right">
       <span class="count"><b id="cur">01</b> / <span id="tot">09</span></span>
       <button class="icon-btn" id="theme" aria-label="Alternar tema"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
@@ -266,7 +266,7 @@
       <div class="cover-veil"></div>
       <div class="slide-inner">
         <div class="cover-kicker" data-r="1">Proposta de arquitetura · 2026</div>
-        <h1 class="hero-title" data-r="2"><span class="hero-wrap"><span>L4OS </span><span class="grad">Copilot</span></span></h1>
+        <h1 class="hero-title" data-r="2"><span class="hero-wrap"><span class="grad">l4.ia</span></span></h1>
         <p class="cover-sub" data-r="3">A camada de inteligência de todo o L4OS. Pergunte em português e <b>cruze qualquer módulo com qualquer outro</b> — com resposta na hora.</p>
         <div class="cover-meta" data-r="4">
           <span><i></i>Plugável pelo Design System</span>
@@ -285,13 +285,13 @@
           <div class="bullets">
             <div class="bullet" data-r="3"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Backend e front próprios.</b> A IA nunca vive dentro do módulo. É um serviço à parte, com banco e chaves próprios.</p></div>
             <div class="bullet" data-r="4"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Um console central controla tudo.</b> Liga e desliga por módulo, escolhe o modelo, gere chaves e mostra o uso.</p></div>
-            <div class="bullet" data-r="5"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Plugável pelo Design System.</b> O <span class="mono accent" style="font-size:13px">&lt;Copilot/&gt;</span> aparece em qualquer módulo, sem código no módulo.</p></div>
+            <div class="bullet" data-r="5"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Plugável pelo Design System.</b> O <span class="mono accent" style="font-size:13px">&lt;L4ia/&gt;</span> aparece em qualquer módulo, sem código no módulo.</p></div>
           </div>
           <div class="snippet" data-r="4">
 <span class="c">// no front de qualquer módulo</span><br>
-<span class="k">import</span> { <span class="t">Copilot</span> } <span class="k">from</span> <span class="s">"@l4-web/ui"</span>;<br><br>
-&lt;<span class="t">Copilot</span> <span class="k">module</span>=<span class="s">"demandas"</span> /&gt;<br><br>
-<span class="c">// fala com /api/copilot</span><br>
+<span class="k">import</span> { <span class="t">L4ia</span> } <span class="k">from</span> <span class="s">"@l4-web/ui"</span>;<br><br>
+&lt;<span class="t">L4ia</span> <span class="k">module</span>=<span class="s">"demandas"</span> /&gt;<br><br>
+<span class="c">// fala com /api/l4ia</span><br>
 <span class="c">// outro serviço, outro banco</span>
           </div>
         </div>
@@ -355,7 +355,7 @@
       <div class="slide-inner">
         <div class="eyebrow" data-r="1">Simples de ligar</div>
         <h2 data-r="2">Como um módulo ganha IA.</h2>
-        <p class="lead" data-r="3">O <span class="mono accent" style="font-size:14px">&lt;Copilot/&gt;</span> já vem do Design System. Dar IA a um módulo é configuração, não código.</p>
+        <p class="lead" data-r="3">O <span class="mono accent" style="font-size:14px">&lt;L4ia/&gt;</span> já vem do Design System. Dar IA a um módulo é configuração, não código.</p>
         <div class="steps" data-r="4">
           <div class="step">
             <div class="num">PASSO 1</div>
@@ -394,7 +394,7 @@
             <div class="chat" id="chat">
               <div class="chat-head">
                 <span class="av"></span>
-                <div><b>Copiloto · Reporta</b><div class="ctx">cruza cria + reporta · via L4OS Copilot</div></div>
+                <div><b>l4.ia · Reporta</b><div class="ctx">cruza cria + reporta · via l4.ia</div></div>
                 <span class="live"><i></i>ao vivo</span>
               </div>
               <div class="chat-body" id="chat-body"></div>
@@ -418,11 +418,11 @@
             <div class="flowline"></div><div class="flow-pulse"></div>
             <div class="layer">
               <span class="lbadge">DS</span>
-              <div class="lbody"><b>&lt;Copilot/&gt; no Design System</b><span>Aparece em todo módulo. Resposta em streaming.</span></div>
+              <div class="lbody"><b>&lt;L4ia/&gt; no Design System</b><span>Aparece em todo módulo. Resposta em streaming.</span></div>
             </div>
             <div class="layer hl">
               <span class="lbadge">IA</span>
-              <div class="lbody"><b>L4OS Copilot (serviço próprio)</b><span>Backend, banco e chaves próprios. Escolhe o modelo por módulo.</span></div>
+              <div class="lbody"><b>l4.ia (serviço próprio)</b><span>Backend, banco e chaves próprios. Escolhe o modelo por módulo.</span></div>
             </div>
             <div class="layer">
               <span class="lbadge">CÉREBRO</span>
@@ -435,7 +435,7 @@
           </div>
           <div class="aside" data-r="4">
             <h4>Isolado por design</h4>
-            <div class="box"><b>Banco próprio (pg-copilot)</b><p>Guarda só conversas, memória, skills e config. Nunca os dados dos módulos. Escopado por empresa e usuário.</p></div>
+            <div class="box"><b>Banco próprio (pg-l4ia)</b><p>Guarda só conversas, memória, skills e config. Nunca os dados dos módulos. Escopado por empresa e usuário.</p></div>
             <div class="box dash"><b>Federação aberta</b><p>Qualquer módulo cruza com qualquer outro no cérebro, controlado por config + authz — nunca cross-DB.</p></div>
             <div class="box"><b>text-to-SQL blindado</b><p>Só <span class="mono">SELECT</span>, allow-list de views, escopo injetado no servidor e role só-leitura no IAM.</p></div>
           </div>
@@ -448,12 +448,12 @@
       <div class="slide-inner">
         <div class="eyebrow" data-r="1">Os dados, com segurança</div>
         <h2 data-r="2">Leitura isolada, nativa do GCP.</h2>
-        <p class="lead" data-r="3">O Copilot nunca abre conexão na base de produção. O próprio GCP mantém uma cópia só-leitura, e a IA consulta por text-to-SQL em views curadas.</p>
+        <p class="lead" data-r="3">O l4.ia nunca abre conexão na base de produção. O próprio GCP mantém uma cópia só-leitura, e a IA consulta por text-to-SQL em views curadas.</p>
         <div class="strip" data-r="4" style="margin-top:26px">
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><b>1 · Produção</b></div><p>Cloud SQL de cada módulo. A fonte da verdade, intocada.</p></div>
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h11l-3-3M20 17H9l3 3"/></svg><b>2 · Sincronização</b></div><p>Frescor misto: Datastream (CDC) onde precisa tempo-real; batch de hora/dia no resto.</p></div>
           <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 6h16v12H4zM4 10h16M9 10v8"/></svg><b>3 · Cópia read-only</b></div><p>BigQuery (ou réplica) com views curadas e escopo por empresa.</p></div>
-          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 9h8M8 13h5M21 12a9 9 0 1 1-3.8-7.3"/></svg><b>4 · Copilot</b></div><p>Pergunta por text-to-SQL, sempre com role só-leitura.</p></div>
+          <div class="stat"><div class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 9h8M8 13h5M21 12a9 9 0 1 1-3.8-7.3"/></svg><b>4 · l4.ia</b></div><p>Pergunta por text-to-SQL, sempre com role só-leitura.</p></div>
         </div>
         <div class="chips" data-r="5" style="margin-top:18px">
           <span>role só-leitura</span><span>allow-list de views</span><span>limite de linhas e tempo</span><span>validação da query</span><span>escopo por empresa</span>
@@ -530,8 +530,8 @@ provider_path: <span class="s">"direct"</span> | <span class="s">"mcp"</span>
         <div class="eyebrow" data-r="1">Memória + automação</div>
         <h2 data-r="2">Fica mais afiada — e trabalha sozinha.</h2>
         <div class="cols c2" style="margin-top:22px">
-          <div class="card" data-r="3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h3>Aprende com o uso</h3><p>Guarda conversas e feedback e destila correções, preferências e glossário em <span class="mono accent" style="font-size:12.5px">cop_memory</span> (pgvector) + RAG de regras. Não é re-treino — é memória que cresce.</p></div>
-          <div class="card" data-r="4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Análises agendadas (skills)</h3><p>Prompts recorrentes em <span class="mono accent" style="font-size:12.5px">cop_schedule</span> (cron configurável) rodam num Cloud Run Job e entregam no L4OS ou no WhatsApp — no horário que você escolher.</p></div>
+          <div class="card" data-r="3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h3>Aprende com o uso</h3><p>Guarda conversas e feedback e destila correções, preferências e glossário em <span class="mono accent" style="font-size:12.5px">l4ia_memory</span> (pgvector) + RAG de regras. Não é re-treino — é memória que cresce.</p></div>
+          <div class="card" data-r="4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Análises agendadas (skills)</h3><p>Prompts recorrentes em <span class="mono accent" style="font-size:12.5px">l4ia_schedule</span> (cron configurável) rodam num Cloud Run Job e entregam no L4OS ou no WhatsApp — no horário que você escolher.</p></div>
         </div>
       </div>
     </section>
@@ -543,7 +543,7 @@ provider_path: <span class="s">"direct"</span> | <span class="s">"mcp"</span>
         <h2 data-r="2">Cabe no orçamento.</h2>
         <p class="lead" data-r="3">Cerca de <strong>R$ 50 por pessoa ao mês</strong> num time enxuto — e com <strong>teto de gasto que você define</strong>, então nunca surpreende no fim do mês.</p>
         <div class="chips" data-r="4" style="margin-top:20px">
-          <span>infra quase fixa · min:0 · batch</span><span>IA por uso, com teto (cop_budget)</span><span>maximumBytesBilled no BigQuery</span><span>frescor misto</span>
+          <span>infra quase fixa · min:0 · batch</span><span>IA por uso, com teto (l4ia_budget)</span><span>maximumBytesBilled no BigQuery</span><span>frescor misto</span>
           <span class="note">alavancas: routing · prompt caching · RAG/pushdown · batch</span>
         </div>
       </div>
@@ -555,21 +555,21 @@ provider_path: <span class="s">"direct"</span> | <span class="s">"mcp"</span>
         <div class="eyebrow" data-r="1">Como chegar lá</div>
         <h2 data-r="2">Do piloto ao rollout.</h2>
         <div class="road" style="margin-top:28px">
-          <div class="phase" data-r="3"><div class="pn">F0</div><h4>Serviço + chat</h4><p>L4OS Copilot no ar, resposta em streaming (SSE).</p></div>
-          <div class="phase" data-r="4"><div class="pn">F1</div><h4>Piloto no DS</h4><p>&lt;Copilot/&gt; num módulo sem IA (Demandas).</p></div>
+          <div class="phase" data-r="3"><div class="pn">F0</div><h4>Serviço + chat</h4><p>l4.ia no ar, resposta em streaming (SSE).</p></div>
+          <div class="phase" data-r="4"><div class="pn">F1</div><h4>Piloto no DS</h4><p>&lt;L4ia/&gt; num módulo sem IA (Demandas).</p></div>
           <div class="phase" data-r="5"><div class="pn">F2</div><h4>Cérebro de dados</h4><p>BigQuery + pipes (Reporta) + views + tenant_map.</p></div>
           <div class="phase" data-r="6"><div class="pn">F3</div><h4>Cruzamento</h4><p>text-to-SQL blindado, multi-módulo + correlação arte→venda.</p></div>
           <div class="phase" data-r="6"><div class="pn">F4</div><h4>Console</h4><p>On/off, modelo, budget, quem usa, schedules.</p></div>
           <div class="phase" data-r="7"><div class="pn">F5</div><h4>Memória + rollout</h4><p>RAG, skills, uso — e ligar módulo a módulo.</p></div>
         </div>
-        <p class="lead" data-r="7" style="margin-top:24px;font-size:14.5px">O piloto é de propósito num módulo sem IA: se ele ganha um copiloto só ligando no console, está provado que pluga em qualquer um. O <strong>arte→venda entra no MVP por correspondência</strong> (Meta ad_id / art_link), sem tocar nos bancos; o "código no link" fica como melhoria futura pra 100% de precisão.</p>
+        <p class="lead" data-r="7" style="margin-top:24px;font-size:14.5px">O piloto é de propósito num módulo sem IA: se ele ganha um l4.ia só ligando no console, está provado que pluga em qualquer um. O <strong>arte→venda entra no MVP por correspondência</strong> (Meta ad_id / art_link), sem tocar nos bancos; o "código no link" fica como melhoria futura pra 100% de precisão.</p>
       </div>
     </section>
 
     <!-- 8 · FECHAMENTO -->
     <section class="slide" id="s-close">
       <div class="slide-inner">
-        <h1 class="hero-title" data-r="2"><span class="hero-wrap"><span>L4OS </span><span class="grad">Copilot</span></span></h1>
+        <h1 class="hero-title" data-r="2"><span class="hero-wrap"><span class="grad">l4.ia</span></span></h1>
         <p class="lead" data-r="3" style="margin:20px auto 0">A inteligência de todo o L4OS, num só lugar.</p>
       </div>
     </section>
